@@ -1,0 +1,62 @@
+# PythonAirDropConfigFile
+host: 0.0.0.0 # サーバーにするホストiP
+port: 80 # サーバーのポート番号
+block_size: 8192 # ブロックサイズ
+add_header_MS_Author_Via: true
+hotfixes:
+    emulate_win32_lastmod: false
+    re_encode_path_info: true
+    unquote_path_info: false
+    treat_root_options_as_asterisk: false
+mount_path: null
+provider_mapping:
+    '/': './' # 共有するフォルダのパス
+http_authenticator:
+    accept_basic: true
+    accept_digest: true
+    default_to_digest: true
+    trusted_auth_header: null
+    domain_controller: null
+simple_dc:
+    user_mapping:
+        '*':
+            'test': # ユーザー名
+                password: 'password' # パスワード
+                roles: ['users'] # 誰がアクセスしているか
+nt_dc:
+    preset_domain: null
+    preset_server: null
+pam_dc:
+    service: 'login'
+    encoding: 'utf-8'
+    resetcreds: true
+cors:
+    allow_origin: null
+    allow_methods: null
+    allow_headers: null
+    expose_headers: null
+    allow_credentials: false
+    max_age: 600
+    add_always:
+property_manager: null
+mutable_live_props:
+    - '{DAV:}getlastmodified'
+lock_storage: true
+verbose: 3
+logging:
+    logger_date_format: '%H:%M:%S'
+    logger_format: '%(asctime)s.%(msecs)03d - %(levelname)-8s: %(message)s'
+    debug_methods: []
+    debug_litmus: []
+dir_browser:
+    enable: true
+    directory_slash: true
+    icon: false
+    response_trailer: false
+    show_user: false
+    show_logout: false
+    davmount: true
+    davmount_links: false
+    ms_sharepoint_support: true
+    libre_office_support: true
+    htdocs_path: null
